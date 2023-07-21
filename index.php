@@ -9,26 +9,27 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="index.php" method="post">
-        <div>
-            <h3>Seleccinar switches</h3>
-            <select name="switch1">
-                <option value="0">switch</option>
-                <?php host($conn);?>
-            </select>
-            <select name="switch2" style="margin-top: 5px">
-                <option value="0">switch</option>
-                <?php host($conn);?>
-            </select>
-            <button style="margin-top: 5px;">Cargar</button>
-        </div>
-    </form>
+    <div id="campos">
+        <h3>Seleccinar switches</h3>
+        <select name="switch">
+            <option value="0">switch</option>
+            <?php host($conn);?>
+        </select>
+        <button style="margin-top: 5px;">Cargar</button>
+        <div id="lista"></div>
+    </div>
     <button style="margin-top: 5px" onclick="grafico()">Ver grafico</button>
     <div style="background-color: white; margin-top: 10px; width: 50%; height: 100%">
         <canvas id="chart" hidden></canvas>
     </div>
 </body>
 <script>
+    let switches = [];
+    function lista(){
+        let switch = document.getElementById("switch").value;
+        switches.push(switch);
+        document.getElementById("lista").innerHTML =
+    }
     function grafico(){
         document.getElementById("chart").innerHTML = 
         `<canvas id="chart" style="width:250px"></canvas>`;

@@ -1,5 +1,5 @@
 <?php
-
+$count = 1;
 function conexionBase(){
     // Conexión con db = mysql_connect('ip_de_bd', 'usuario', 'clave', 'nombre_db')
     $base = mysqli_connect('localhost', 'iperf', 'iperf', 'iperf'); // Conexion con la base
